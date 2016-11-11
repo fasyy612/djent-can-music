@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+	<title>Djent Can Music</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/background.css">
+	<!--audio tag is fairly new feature of HTML5, here we store necessary audio for the website-->
+	<audio id="C" src="../sounds/C.ogg" preload="auto"></audio>
+	<audio id="D" src="../sounds/D.ogg" preload="auto"></audio>
+	<audio id="E" src="../sounds/E.ogg" preload="auto"></audio>
+	<audio id="F" src="../sounds/F.ogg" preload="auto"></audio>
+	<audio id="G" src="../sounds/G.ogg" preload="auto"></audio>
+	<audio id="A" src="../sounds/A.ogg" preload="auto"></audio>
+	<audio id="B" src="../sounds/B.ogg" preload="auto"></audio>
+</head>
+<body>
+<!--images are layered on top of each other, the order goes logic, background color, bar lines, frame, and buttons-->
+<div id="game-container">
+	<div class="moon"></div>
+	<img class="decoration" src="../images/sithuAyylmao.png">
+	<div id="game-frame">
+		<img class="can-frame" src="../images/frame.png">
+		<img class="can-frame-background" src="../images/frameBackground.png">
+		<img class="can-bar" src="../images/bar.png">
+		<div class="note-bar" id="bar0"></div>
+		<div class="note-bar" id="bar1"></div>
+		<div class="note-bar" id="bar2"></div>
+		<div class="note-bar" id="bar3"></div>
+		<div class="note-bar" id="bar4"></div>
+		<div class="note-bar" id="bar5"></div>
+		<div class="note-bar" id="bar6"></div>
+		<img class="key-button" id="key0" src="../images/button.png">
+		<img class="key-button" id="key1" src="../images/button.png">
+		<img class="key-button" id="key2" src="../images/button.png">
+		<img class="key-button" id="key3" src="../images/button.png">
+		<img class="key-button" id="key4" src="../images/button.png">
+		<img class="key-button" id="key5" src="../images/button.png">
+		<img class="key-button" id="key6" src="../images/button.png">
+
+		<div id="resultDisplay" style="position: absolute; top: 280px; width: 95px; text-align: center; font-weight: bold; z-index: 5"></div>
+		<div id="comboDisplay" style="position: absolute; top: 300px; width: 95px; text-align: center; font-weight: bold; z-index: 5; color: #AAAA00;"></div>
+		<div id="background0" class="background" style="visibility: hidden; position: absolute; left: 1px; top: 3px; width: 31px; height: 415px; background-color: white;z-index: 0"></div>
+		<div id="background1" class="background" style="visibility: hidden; position: absolute; left: 17px; top: 3px; width: 31px; height: 415px; background-color: white;z-index: 0"></div>
+		<div id="background2" class="background" style="visibility: hidden; position: absolute; left: 33px; top: 3px; width: 31px; height: 415px; background-color: white;z-index: 0"></div>
+		<div id="background3" class="background" style="visibility: hidden; position: absolute; left: 49px; top: 3px; width: 31px; height: 415px; background-color: white;z-index: 0"></div>
+		<div id="background4" class="background" style="visibility: hidden; position: absolute; left: 65px; top: 3px; width: 31px; height: 415px; background-color: white;z-index: 0"></div>
+	</div>
+	<div id="game-score">
+		<img class="scoreboard" src="../images/scoreboard.png">
+	</div>
+</div>
+<script src="../enums/keyboardInput.js"></script>
+<script src="../scripts/EventHandler.js"></script>
+<script src="../scripts/test.js"></script>
+</body>
+</html>

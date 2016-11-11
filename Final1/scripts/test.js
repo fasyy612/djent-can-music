@@ -1,7 +1,7 @@
 /**
  * testing keyboard inputs and js functionalities
  */
-var gameInputKeys = [
+let gameInputKeys = [
 	65, // a
 	83, // s
 	68, // d
@@ -12,7 +12,7 @@ var gameInputKeys = [
 ]
 
 // map linking keycodes to sound elements
-var sounds = {
+let sounds = {
 	65 : 'C', // do
 	83 : 'D', // re
 	68 : 'E', // mi
@@ -26,151 +26,46 @@ var sounds = {
 // You can then wrap your code in that function's brackets
 // and it will execute once loading is complete.
 document.addEventListener('DOMContentLoaded', function () {
-	
-	var body = document.querySelector('body');
-	body.onkeydown = handleKeyDown;
-	body.onkeyup = handleKeyUp;
-	body.onkeypress = handleKeyPress;
-	var left = 33;
-	for (var i = 0; i < 7; i++) {
+	initializeEvents();
+	initializeScreen();
+});
+
+function initializeEvents() {
+	let body = document.querySelector('body');
+	body.onkeydown = EventHandler.handleKeyDown;
+	body.onkeyup = EventHandler.handleKeyUp;
+	body.onkeypress = EventHandler.handleKeyPress;
+}
+
+function initializeScreen() {
+	let left = 36;
+	for (let i = 0; i < 7; i++) {
 		// initialize alignments of bars that will handle notes
-		var id = "bar" + i;
-		var d = document.getElementById(id);
+		let id = "bar" + i;
+		let d = document.getElementById(id);
 		d.style.left = left + 'px';
 	}
 	
-});
-
-function playAudio(audio) {
-	if (audio !== undefined) {
-		audio.pause();
-		audio.volume = 1.0;
-		if (audio.readyState >= 2){
-			audio.currentTime = 0;
-			audio.play();
-		}
+	left = -195;
+	let top = 415;
+	for (let i = 0; i < 4; i++) {
+		// place the buttons
+		let id = "key" + i;
+		let d = document.getElementById(id);
+		d.style.left = left + 'px';
+		d.style.top = top + 'px';
+		left += 33;
+		top -= 29;
+		console.log(top);
 	}
-}
-
-/*
- * Function that handles when user presses given key sets
- * if recognizable key is pressed, appropriate events should
- * trigger
- */
-function handleKeyDown(event) {
-	// recognized keys will trigger color change + note sound
-	if(event.keyCode !== undefined) {
-		var soundId = sounds[event.keyCode];
-		console.log(soundId);
 	
-		if(soundId !== undefined) {
-			var audio = document.getElementById(soundId);
-			switch (event.keyCode) {
-				case gameInputKeys[0]:
-					console.log('a pressed');
-					audio.pause();
-					audio.volume = 1.0;
-					if (audio.readyState >= 2){
-						audio.currentTime = 0;
-						audio.play();
-					}
-					var id = "bar" + 0;
-					var d = document.getElementById(id);
-					d.style.background = "linear-gradient(rgba(255,255,0,0), rgba(255,255,0,1))"
-					break;
-				case gameInputKeys[1]:
-					console.log('s pressed');
-					audio.pause();
-					audio.volume = 1.0;
-					if (audio.readyState >= 2){
-						audio.currentTime = 0;
-						audio.play();
-					}
-					var id = "bar" + 1;
-					var d = document.getElementById(id);
-					d.style.background = "linear-gradient(rgba(255,255,0,0), rgba(255,255,0,1))"
-					break;
-				case gameInputKeys[2]:
-					console.log('d pressed');
-					audio.pause();
-					audio.volume = 1.0;
-					if (audio.readyState >= 2){
-						audio.currentTime = 0;
-						audio.play();
-					}
-					var id = "bar" + 2;
-					var d = document.getElementById(id);
-					d.style.background = "linear-gradient(rgba(255,255,0,0), rgba(255,255,0,1))"
-					break;
-				case gameInputKeys[3]:
-					console.log('space pressed');
-					audio.pause();
-					audio.volume = 1.0;
-					if (audio.readyState >= 2){
-						audio.currentTime = 0;
-						audio.play();
-					}
-					var id = "bar" + 3;
-					var d = document.getElementById(id);
-					d.style.background = "linear-gradient(rgba(255,255,0,0), rgba(255,255,0,1))"
-					break;
-				case gameInputKeys[4]:
-					console.log('j pressed');
-					audio.pause();
-					audio.volume = 1.0;
-					if (audio.readyState >= 2){
-						audio.currentTime = 0;
-						audio.play();
-					}
-					var id = "bar" + 4;
-					var d = document.getElementById(id);
-					d.style.background = "linear-gradient(rgba(255,255,0,0), rgba(255,255,0,1))"
-					break;
-				case gameInputKeys[5]:
-					console.log('k pressed');
-					audio.pause();
-					audio.volume = 1.0;
-					if (audio.readyState >= 2) {
-						audio.currentTime = 0;
-						audio.play();
-					}
-					var id = "bar" + 5;
-					var d = document.getElementById(id);
-					d.style.background = "linear-gradient(rgba(255,255,0,0), rgba(255,255,0,1))"
-					break;
-				case gameInputKeys[6]:
-					console.log('l pressed');
-					audio.pause();
-					audio.volume = 1.0;
-					if (audio.readyState >= 2){
-						audio.currentTime = 0;
-						audio.play();
-					}
-					var id = "bar" + 6;
-					var d = document.getElementById(id);
-					d.style.background = "linear-gradient(rgba(255,255,0,0), rgba(255,255,0,1))"
-					break;
-				default:
-					// ignore the rest
-			}
-		} else {
-			console.log("this key is not mapped to a sound: code is", event.keyCode);
-		}
-	event.preventDefault();
+	top = 328 - 45;
+	for (let i = 4; i < 7; i++) {
+		let id = "key" + i;
+		let d = document.getElementById(id);
+		d.style.left = left + 'px';
+		d.style.top = top + 'px';
+		left += 33;
+		top -= 45;
 	}
-}
-
-function handleKeyUp(event) {
-	// revert images back to normal
-	console.log('key is up');
-	for (var i = 0; i < 7; i++) {
-		var id = "bar" + i;
-		var d = document.getElementById(id);
-		d.style.background = ""
-	}
-}
-
-function handleKeyPress(event) {
-	// loop the handleKeyDown function
-	console.log('key is pressed continuously');
 }
