@@ -9,3 +9,7 @@ So far, I know that I will be using C/C++ for back end architectures, I'd like t
 I started getting the 'conductor' class that will be responsible for keeping beats per minute/user hit/mp3 metadata buffer/which point in the song currently the user is in etc.
 Hopefully eventually it can process .mp3 AND .wav files but starting from processing .wav file first. I'm gonna create all the UI that looks similar to original UI via Photoshop/Illustrator.
 Djent/Prog metal is really wonky with time signatures, so I'll make 4/4 songs work first and then customize the structure to accustom more weird time signatures.
+
+# Update:
+<p align="center"><img src="images/gamescreen.png" alt="Screenshot of djent-can-music UI"></p>
+I got most of the UI done, all the keyboard inputs are recognizable now. Drew the frame of can myself for copyright issue avoidance!
