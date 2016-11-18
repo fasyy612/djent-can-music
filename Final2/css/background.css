@@ -1,0 +1,141 @@
+html { 
+  background: url(../images/space.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#game-container {
+	margin: 0px; 
+	padding: 0px; 
+	position: absolute; 
+	left: 30px; 
+	top: 20px; 
+	width: 256px;
+}
+
+/*
+* the moon animates infinitely
+*/
+.moon {
+	position: absolute;
+	left: 400px;
+	top: -20px;
+	width: 432px;
+	height: 504px;
+	zoom: 0.4;
+	float: left;
+	margin: 50px auto;
+	display: block;
+	background: url('../images/moonSprite.png');
+	animation: play 1.5s steps(9) infinite;
+	z-index: 6;
+}
+
+@keyframes play {
+	100% { background-position: -3888px; }
+}
+
+.decoration {
+	position: relative;
+	left: 365px;
+}
+
+#game-frame {
+	position: absolute;
+	left: 6px;
+	top: 150px;
+	height: 500px;
+	width: 300px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.can-frame {
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 5px;
+	z-index: 5;
+}
+
+.can-frame-background {
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+	left: 0px;
+	z-index: 1;
+}
+
+.can-bar {
+	position: absolute; 
+	max-width: 100%;
+	max-height: 100%;
+	left: 28px;
+	top: 395px;
+	width: 243px; 
+	height: 17px;
+	z-index: 4;
+}
+
+.note-bar {
+    position: relative;
+    float: left;
+    top: 50px;
+	width: 31px;
+	height: 410px; 
+	border: solid 1px #dddddd; 
+	z-index: 3;
+}
+
+.key-button {
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	width: 33px;
+	height: 33px;
+	z-index: 6;
+}
+
+.face {
+	position: absolute;
+	opacity: 0.5;
+	max-width: 100%;
+	max-height: 100%;
+	width: 154px;
+	height: 265px;
+	top: 120px;
+	left: 70px;
+	z-index: 2;
+}
+
+#game-score {
+	position: absolute;
+	left: 330px;
+	top: 200px;
+	height: 500px;
+	width: 300px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.scoreboard {
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	width: 200px;
+	height: 400px;
+}
+
+p {
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	top: 285px;
+	left: 15px;
+	width: 100%;	
+}
+
+
