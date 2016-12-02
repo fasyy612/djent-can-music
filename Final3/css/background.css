@@ -1,0 +1,263 @@
+html { 
+  background: url(../images/space.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#game-container {
+	margin: 0px; 
+	padding: 0px; 
+	position: absolute; 
+	left: 30px; 
+	top: 20px; 
+	width: 256px;
+}
+
+/*
+* the moon animates infinitely
+*/
+.moon {
+	position: absolute;
+	left: 400px;
+	top: -20px;
+	width: 432px;
+	height: 504px;
+	zoom: 0.4;
+	float: left;
+	margin: 50px auto;
+	display: block;
+	background: url('../images/moonSprite.png');
+	animation: play 1.5s steps(9) infinite;
+	z-index: 6;
+}
+
+@keyframes play {
+	100% { background-position: -3888px; }
+}
+
+.decoration {
+	position: relative;
+	left: 365px;
+}
+
+#game-frame {
+	position: absolute;
+	left: 6px;
+	top: 150px;
+	height: 500px;
+	width: 300px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.can-frame {
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 5px;
+	z-index: 5;
+}
+
+.can-frame-background {
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+	left: 0px;
+	z-index: 1;
+}
+
+.can-bar {
+	position: absolute; 
+	max-width: 100%;
+	max-height: 100%;
+	left: 28px;
+	top: 395px;
+	width: 243px; 
+	height: 17px;
+	z-index: 4;
+}
+
+.note-bar {
+    position: relative;
+    float: left;
+    top: 50px;
+	width: 31px;
+	height: 410px; 
+	border: solid 1px #dddddd; 
+	z-index: 3;
+}
+
+.key-button {
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	width: 33px;
+	height: 33px;
+	z-index: 6;
+}
+
+.face {
+	position: absolute;
+	opacity: 0.5;
+	max-width: 100%;
+	max-height: 100%;
+	width: 154px;
+	height: 265px;
+	top: 120px;
+	left: 70px;
+	z-index: 2;
+}
+
+#game-score {
+	position: absolute;
+	left: 330px;
+	top: 180px;
+	height: 500px;
+	width: 300px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.scoreboard {
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	width: 220px;
+	height: 420px;
+}
+
+#playButton, #quitButton {
+	width: 61px;
+	height: 29px;
+	border: 0;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#playButton:hover, #quitButton:hover {
+	filter: hue-rotate(130deg);
+}
+
+.play-button {
+	position: relative;
+	left: -179px;
+	top: -220px;
+	background: url(../images/gameStateButton.png);
+	background-size: 100% 100%;
+	background-position: center center;
+}
+
+.quit-button {
+	position: relative;
+	left: 113px;
+	top: -249px;
+	background: url(../images/gameStateButton.png);
+	background-size: 100% 100%;
+	background-position: center center;
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    filter: hue-rotate(60deg);
+}
+
+.quit-button div {
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+#switchKeys {
+	position: relative;
+	background-color: #6666FF;
+	border: 3px solid #C9C9C9;
+	border-radius: 8px;
+	color: white;
+	width: 35px;
+	height: 25px;
+	text-align: center;
+	top: -313px;
+	left: 20px;
+}
+
+#changeColor {
+	position: relative;
+	background-color: #006600;
+	border: 3px solid #C9C9C9;
+	border-radius: 8px;
+	color: white;
+	width: 35px;
+	height: 25px;
+	text-align: center;
+	top: -313px;
+	left: 30px;
+}
+
+#screenshot {
+	position: relative;
+	background-color: #FF4C4C;
+	border: 3px solid #C9C9C9;
+	border-radius: 8px;
+	color: white;
+	width: 35px;
+	height: 25px;
+	text-align: center;
+	top: -313px;
+	left: 40px;
+}
+
+#options {
+	position: relative;
+	background-color: #7647A2;
+	border: 3px solid #C9C9C9;
+	border-radius: 8px;
+	color: white;
+	width: 35px;
+	height: 25px;
+	text-align: center;
+	top: -313px;
+	left: 50px;
+}
+
+.game-status {
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	top: 310px;
+	left: 15px;
+}
+
+.song-screen {
+	position: relative;
+	top: -395px;
+	left: 50px;
+	width: 158px;
+	height: 119px;
+}
+
+.song-screen div {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: black;
+	left: 95px;
+	top: 200px;
+}
+
+#timer {
+	position: absolute;
+	top: 28px;
+	left: 78px;
+	color: #00FF00;
+	font-family: Lucida Console, Monaco, monospace;
+	font-size: 20px;
+}
