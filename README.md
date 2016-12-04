@@ -11,5 +11,5 @@ Hopefully eventually it can process .mp3 AND .wav files but starting from proces
 Djent/Prog metal is really wonky with time signatures, so I'll make 4/4 songs work first and then customize the structure to accustom more weird time signatures.
 
 # Update:
-<p align="center"><img src="images/gamescreen.png" alt="Screenshot of djent-can-music UI"></p>
+<p align="center"><img src="images/gamescreen2.png" alt="Screenshot of djent-can-music UI"></p>
 I got most of the UI done, all the keyboard inputs are recognizable now. Drew the frame of can myself for copyright issue avoidance!
